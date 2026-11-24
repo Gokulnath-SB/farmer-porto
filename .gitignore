@@ -1,0 +1,12 @@
+node_modules/
+dist/
+coverage/
+qa-evidence/
+.opencode-cache/
+.opencode-config/
+.opencode-data/
+.opencode-state/
+.env
+.env.*
+*.log
+.DS_Store

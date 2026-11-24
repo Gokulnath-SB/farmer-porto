@@ -1,0 +1,118 @@
+/* Skills — four category cards, one per skill group. */
+
+.skills__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(0.9rem, 1.8vw, 1.35rem);
+  align-items: stretch;
+}
+
+.skills__card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  min-width: 0;
+  padding: clamp(1.15rem, 2.2vw, 1.75rem);
+  will-change: transform, opacity;
+}
+
+.skills__card-head {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.skills__index {
+  display: block;
+}
+
+.skills__group-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 1.6vw, 1.3rem);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.skills__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.skills__item {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  max-width: 100%;
+  min-width: 0;
+  padding: 0.5rem 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: rgba(7, 20, 13, 0.45);
+}
+
+.skills__item-name {
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.skills__note {
+  padding-left: 0.45rem;
+  border-left: 1px solid var(--border-strong);
+  color: var(--lime);
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  line-height: 1.35;
+}
+
+.skills__footnote {
+  margin: 1.5rem 0 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+@media (max-width: 1100px) {
+  .skills__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .skills__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .skills__card {
+    gap: 1rem;
+    padding: 1.15rem;
+  }
+
+  .skills__item {
+    padding: 0.45rem 0.6rem;
+  }
+
+  .skills__item-name {
+    font-size: 0.72rem;
+  }
+
+  .skills__footnote {
+    font-size: 0.75rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skills__card {
+    will-change: auto;
+  }
+}

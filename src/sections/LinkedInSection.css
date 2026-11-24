@@ -1,0 +1,87 @@
+/* LinkedIn networking band — editorial, deliberately unlike a card grid. */
+
+.linkedin {
+  padding-block: 0;
+}
+
+.linkedin__band {
+  position: relative;
+  overflow: hidden;
+  padding-block: clamp(3.5rem, 7vw, 6rem);
+  border-top: 1px solid var(--border-strong);
+  border-bottom: 1px solid var(--border-strong);
+  background: linear-gradient(105deg, var(--bg-2) 0%, #103722 46%, var(--forest) 100%);
+}
+
+.linkedin__band::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(55% 90% at 92% 10%, rgba(183, 243, 107, 0.13), transparent 72%);
+}
+
+.linkedin__inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(260px, 0.7fr);
+  align-items: center;
+  gap: clamp(2rem, 5vw, 5rem);
+}
+
+.linkedin__lead .section-head {
+  margin-bottom: 0;
+}
+
+.linkedin__lead .section-title {
+  max-width: 17ch;
+}
+
+.linkedin__aside {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  padding-left: clamp(0px, 3vw, 2.5rem);
+  border-left: 1px solid var(--border-strong);
+}
+
+.linkedin__mark {
+  display: grid;
+  place-items: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  color: var(--lime);
+  background: rgba(7, 20, 13, 0.45);
+}
+
+.linkedin__note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.linkedin__cta {
+  margin-top: 0.25rem;
+}
+
+@media (max-width: 768px) {
+  .linkedin__inner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+  }
+
+  .linkedin__aside {
+    padding-top: 1.5rem;
+    padding-left: 0;
+    border-top: 1px solid var(--border-strong);
+    border-left: 0;
+  }
+
+  .linkedin__cta {
+    width: 100%;
+  }
+}

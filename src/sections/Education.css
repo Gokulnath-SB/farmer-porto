@@ -1,0 +1,171 @@
+.edu__timeline {
+  position: relative;
+  padding-left: clamp(1.6rem, 4vw, 3rem);
+}
+
+.edu__rail {
+  position: absolute;
+  top: 0.6rem;
+  bottom: 0;
+  left: 0.42rem;
+  width: 1px;
+  transform-origin: top;
+  background: linear-gradient(180deg, var(--lime) 0%, var(--border-strong) 55%, transparent 100%);
+}
+
+.edu__node {
+  position: absolute;
+  top: 2.1rem;
+  left: 0.12rem;
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 50%;
+  background: var(--lime);
+  box-shadow: 0 0 0 5px rgba(183, 243, 107, 0.1), 0 0 18px rgba(183, 243, 107, 0.5);
+  animation: edu-node-pulse 3s var(--ease) infinite alternate;
+}
+
+@keyframes edu-node-pulse {
+  from {
+    box-shadow: 0 0 0 4px rgba(183, 243, 107, 0.08), 0 0 12px rgba(183, 243, 107, 0.35);
+  }
+  to {
+    box-shadow: 0 0 0 7px rgba(183, 243, 107, 0.14), 0 0 24px rgba(183, 243, 107, 0.6);
+  }
+}
+
+.edu__entry {
+  position: relative;
+}
+
+.edu__card {
+  padding: clamp(1.5rem, 3.5vw, 2.75rem);
+}
+
+.edu__card-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.edu__badge {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 2.8rem;
+  height: 2.8rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 8px;
+  color: var(--lime);
+  background: rgba(23, 77, 50, 0.32);
+}
+
+.edu__card-heading {
+  min-width: 0;
+}
+
+.edu__label {
+  display: block;
+  margin-bottom: 0.45rem;
+}
+
+.edu__degree {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  font-weight: 650;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+.edu__college {
+  margin: 1rem 0 0;
+  color: var(--muted);
+  font-size: clamp(0.95rem, 1.4vw, 1.05rem);
+}
+
+.edu__divider {
+  height: 1px;
+  margin-block: clamp(1.5rem, 3vw, 2.2rem);
+  background: var(--border);
+}
+
+.edu__gpa-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(0.6rem, 1.5vw, 1rem);
+}
+
+.edu__gpa {
+  height: 100%;
+  padding: clamp(1rem, 2vw, 1.4rem);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: rgba(7, 20, 13, 0.45);
+}
+
+.edu__gpa-label {
+  display: block;
+  margin-bottom: 0.6rem;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.edu__gpa-figure {
+  display: flex;
+  align-items: baseline;
+}
+
+.edu__gpa-number {
+  color: var(--lime);
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 4vw, 2.9rem);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+@media (max-width: 767px) {
+  .edu__timeline {
+    padding-left: 1.6rem;
+  }
+
+  .edu__rail {
+    left: 0.35rem;
+  }
+
+  .edu__node {
+    top: 1.9rem;
+    left: 0.05rem;
+  }
+
+  .edu__card {
+    padding: 1.35rem;
+  }
+
+  .edu__degree {
+    font-size: 1.5rem;
+  }
+
+  .edu__gpa-grid {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+  }
+
+  .edu__gpa {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.85rem 1rem;
+  }
+
+  .edu__gpa-label {
+    margin-bottom: 0;
+  }
+}

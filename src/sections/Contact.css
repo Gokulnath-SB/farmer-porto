@@ -1,0 +1,168 @@
+/* Contact section: two columns on desktop, stacked below 900px. */
+
+.contact {
+  overflow: hidden;
+}
+
+.contact__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  align-items: start;
+  gap: clamp(2rem, 5vw, 5rem);
+}
+
+.contact__info {
+  min-width: 0;
+}
+
+.contact__eyebrow {
+  margin: 0 0 1rem;
+}
+
+.contact__lead {
+  max-width: 22ch;
+  margin: 0 0 1.1rem;
+  color: var(--text);
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.8vw, 2.2rem);
+  font-weight: 650;
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+}
+
+.contact__intro {
+  max-width: 46ch;
+}
+
+.contact__channels {
+  display: grid;
+  gap: 0.7rem;
+  margin: 2.1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.contact__channel {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-height: 4.35rem;
+  padding: 0.8rem 1.05rem;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: rgba(18, 39, 26, 0.72);
+  transition: border-color 0.3s var(--ease), background 0.3s var(--ease), transform 0.3s var(--ease);
+}
+
+.contact__channel:hover,
+.contact__channel:focus-visible {
+  border-color: var(--border-strong);
+  background: rgba(23, 77, 50, 0.32);
+  transform: translateX(3px);
+}
+
+.contact__channel-icon {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 2.7rem;
+  height: 2.7rem;
+  border: 1px solid rgba(183, 243, 107, 0.18);
+  border-radius: 8px;
+  color: var(--lime);
+  background: rgba(183, 243, 107, 0.07);
+}
+
+.contact__channel-text {
+  display: grid;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+.contact__channel-label {
+  font-size: 0.63rem;
+}
+
+.contact__channel-value {
+  color: var(--text);
+  font-size: 0.92rem;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.contact__channel-arrow {
+  margin-left: auto;
+  padding-left: 0.5rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+  transition: color 0.3s var(--ease), transform 0.3s var(--ease);
+}
+
+.contact__channel:hover .contact__channel-arrow {
+  color: var(--lime);
+  transform: translate(2px, -2px);
+}
+
+.contact__form-col {
+  min-width: 0;
+}
+
+.contact__card {
+  padding: clamp(1.35rem, 3vw, 2.25rem);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+}
+
+@media (max-width: 900px) {
+  .contact__grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2.75rem;
+  }
+
+  .contact__lead {
+    max-width: 32ch;
+  }
+
+  .contact__intro {
+    max-width: 60ch;
+  }
+
+  .contact__channels {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .contact__grid {
+    gap: 2.25rem;
+  }
+
+  .contact__channels {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.55rem;
+  }
+
+  .contact__channel {
+    min-height: 3.9rem;
+    padding: 0.7rem 0.85rem;
+  }
+
+  .contact__channel-value {
+    font-size: 0.86rem;
+  }
+
+  .contact__card {
+    padding: 1.15rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact__channel,
+  .contact__channel-arrow {
+    transition: none;
+  }
+
+  .contact__channel:hover,
+  .contact__channel:hover .contact__channel-arrow {
+    transform: none;
+  }
+}
